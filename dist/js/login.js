@@ -336,13 +336,13 @@ function handlePasswordToggle() {
 		if (currentType === "password") {
 			passwordInput.type = "text"
 			passwordToggle.innerHTML =
-				'<svg class="icon"><use xlink:href="dist/icons.svg#eye-closed"/></svg> Hide'
+				'<svg class="icon"><use xlink:href="dist/icons.svg#eye-closed"/></svg>'
 			return
 		}
 
 		passwordInput.type = "password"
 		passwordToggle.innerHTML =
-			'<svg class="icon"><use xlink:href="dist/icons.svg#eye-open"/></svg> Show'
+			'<svg class="icon"><use xlink:href="dist/icons.svg#eye-open"/></svg>'
 	}
 }
 
