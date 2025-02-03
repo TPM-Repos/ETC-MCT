@@ -19,7 +19,7 @@ async function startPageFunctions() {
 		setCustomClientErrorHandler()
 
 		// Get Projects
-		const projects = await client.getProjects(GROUP_ALIAS)
+		let projects = await client.getProjects(GROUP_ALIAS)
 		clearTimeout(loadingTimeout)
 
 		if (config.projects) {
