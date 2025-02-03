@@ -100,6 +100,10 @@ function setStyles(styles, parentKey = "") {
 				}
 			}
 		}
+		document.documentElement.style.setProperty('--link-underline',
+			config.styles?.link?.underline ? 'underline' : 'none');
+		document.documentElement.style.setProperty('--link-underline-hover',
+			config.styles?.link?.underlineOnHover ? 'underline' : 'none');
 	} catch {
 		return false
 	}
