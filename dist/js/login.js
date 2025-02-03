@@ -104,6 +104,11 @@ let client;
 			createAccountButton.classList.add("skeleton-block")
 		}
 	}
+
+	if (loginInformation) {
+		loginInformation.innerText = config.login.information
+	}
+
 	showLoginNotice()
 	setLoginColumnLocation()
 	setCopyright()
