@@ -52,8 +52,8 @@
 	background-color: var(--projectCard-background, #fff);
 	padding: 1.5em;
 	border: 2px solid transparent;
-	border-radius: var(--inputRadius);
-	box-shadow: var(--shadow-light);
+	border-radius: var(--projectCard-borderRadius, 0.5em);
+	/* box-shadow: var(--shadow-light); */
 	transition: border 0.3s ease;
 }
 .project-item .inner:hover {

@@ -28,6 +28,7 @@ const forgotLink = document.getElementById("forgot-link")
 const createAccountButton = document.getElementById("create-account-button")
 const copyright = document.querySelector(".login-copyright")
 const loginPassword = document.querySelector("#login-password")
+const loginInformation = document.querySelector(".login-information")
 
 const usernameLabel = document.querySelector("#username-label")
 const usernameInput = document.querySelector("#login-username")
@@ -100,7 +101,6 @@ let client;
 		if (config.accountManagement.createAccount) {
 			createAccountButton.addEventListener("click", createAccount)
 			createAccountButton.classList.remove("hidden")
-			loginDivider.classList.remove("hidden")
 			createAccountButton.classList.add("skeleton-block")
 		}
 	}
@@ -521,11 +521,13 @@ function transitionImages() {
 
 // function to set the copyright information
 function setCopyright() {
-	if (!copyright || !config.copyright.show) {
-		// nothing to do if the copyright div can't be found
-		// or if the config.copyright.show doesn't exist
-		// or if config.copyright.show is false
-		return
+	// nothing to do if the copyright div can't be found
+	// or if the config.copyright.show doesn't exist
+	// or if config.copyright.show is false
+	if (!copyright) return;
+	if (!config?.copyright?.show) {
+		copyright.style.display = 'none';
+		return;
 	}
 
 	// otherwise, set the text

@@ -45,30 +45,38 @@
 					<img id="logo" />
 				</div>
 
-				<h1 class="login-title">Login to configure</h1>
+				<div>
+					<h1 class="login-title"><strong>Log</strong>In</h1>
 					<p class="login-information">Please login</p>
+				</div>
 
 				<div id="login-notice" class="login-notice"></div>
 
-				<div class="login-details">
+				<div class="input">
 					<label for="login-username" id="username-label">
 						Username
 					</label>
+					<img class="icon" src="dist/img/user-alt.svg" />
 					<input
 						type="text"
 						id="login-username"
 						autocomplete="username"
+						placeholder="Username"
 						value=""
 						autofocus
 						required
 					/>
+				</div>
 
-					<label for="login-password"> Password </label>
-					<div class="password-input">
+				<div class="password-group">
+					<div class="input">
+						<label for="login-password"> Password </label>
+						<img class="icon" src="dist/img/key.svg" />
 						<input
 							type="password"
 							id="login-password"
 							autocomplete="current-password"
+							placeholder="Password"
 							value=""
 						/>
 
@@ -82,10 +90,20 @@
 							</svg>
 						</button>
 					</div>
-
-					<a id="forgot-link" class="hidden">
+					<a id="forgot-link" class="link hidden">
 						Forgot Password?
 					</a>
+				</div>
+
+				<div class="button-group"><div class="login-group">
+					<button
+						type="button"
+						id="create-account-button"
+						class="login-button button pill hidden"
+						disabled
+					>
+						Create Account
+					</button>
 
 					<button
 						type="submit"
@@ -98,35 +116,20 @@
 							<use xlink:href="dist/icons.svg#loading" />
 						</svg>
 					</button>
-
-					<button
-						type="button"
-						id="login-sso-button"
-						class="login-button button skeleton-block hidden"
-						disabled
-					>
-						Login with SSO
-					</button>
-					<button
-						type="button"
-						id="login-guest-button"
-						class="login-button button hidden"
-						disabled
-					>
-						Login as Guest
-					</button>
-
-					<div class="login-divider hidden">or</div>
-
-					<button
-						type="button"
-						id="create-account-button"
-						class="login-button button pill hidden"
-						disabled
-					>
-						Create Account
-					</button>
 				</div>
+
+				<button
+					type="button"
+					id="login-sso-button"
+					class="login-button button skeleton-block hidden"
+					disabled
+				>
+					Login with SSO
+				</button>
+
+				<div id="login-guest">
+					<a id="login-guest-button" class="link hidden"> Login as Guest </a>
+				</div></div>
 
 				<div class="login-copyright">TPM - 2024</div>
 			</form>

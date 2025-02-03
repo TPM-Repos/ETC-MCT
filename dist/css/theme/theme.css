@@ -46,7 +46,7 @@ textarea {
 	font-size: 100%;
 }
 
-button:not(.dw-controlButton):focus {
+button:not(.dw-controlButton, .password-toggle):focus {
 	outline: none;
 	box-shadow: 0 0 0 2px var(--color-focus);
 }
@@ -121,9 +121,9 @@ hr {
 
 .content-nav .logo img {
 	display: block;
-	width: 100%;
-	height: auto;
-	max-width: 200px;
+	width: auto;
+	height: 100%;
+	margin: auto;
 }
 
 .content-nav button {
@@ -244,9 +244,7 @@ hr {
 	width: calc(100% - 3em);
 	padding: 1em 1.5em;
 	margin-left: 1.5em;
-	display: flex;
 	align-items: center;
-	justify-items: auto;
 	gap: 0.5em;
 }
 
@@ -490,7 +488,6 @@ button.nav-overlay:focus {
 	overflow: hidden;
 	background: rgba(0, 0, 0, 0.05);
 	border-radius: var(--inputRadius);
-	height: 10em;
 	/* Default height */
 }
 
@@ -518,11 +515,6 @@ button.nav-overlay:focus {
 }
 
 .watermark {
-	position: absolute;
-	bottom: 8%;
-	left: 0;
-	right: 0;
-	height: 50px;
 	font-size: 50px;
 	text-align: center;
 	color: rgba(112, 112, 112, 0.5);

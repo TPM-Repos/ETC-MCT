@@ -12,6 +12,7 @@ html,
 body {
 	height: 100%;
 	margin: 0;
+	font-family: var(--text-font, "Open Sans", Arial, sans-serif);
 }
 
 .hidden,
@@ -43,11 +44,14 @@ svg.icon {
 .content-nav .logo {
 	display: block;
 	width: 100%;
+	height: 100%;
 }
 .content-nav .logo-wrap {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
+	height: 193px;
+	align-items: center;
 }
 
 .content-nav nav ul {
@@ -82,3 +86,8 @@ svg.icon {
 		display: none;
 	}
 }
+
+aside .icon {
+	fill: var(--sidebar-iconColor, --color-icon, white);
+}
+
