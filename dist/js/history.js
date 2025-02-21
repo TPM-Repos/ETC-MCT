@@ -90,7 +90,7 @@ function getStoredQuery(top, skip) {
 
 	// Filter out running Specifications
 	if (!runningSpecVisibility) {
-		query += "&$filter=StateType ne 'Running'"
+		query += "&$filter=StateType ne 'Running' and 'IsArchived' eq false"
 	}
 
 	// Get name filter
@@ -323,7 +323,7 @@ async function filterSpecificationsByName(name) {
 		// Create OData filter (contains name)
 		const query = `$filter=contains(tolower(name), tolower('${escapeStringForOData(
 			name,
-		)}')) and StateType ne 'Running'&$orderby=DateEdited ${currentDateOrder}&$top=${defaultLimit}`
+		)}')) and StateType ne 'Running' and 'IsArchived' eq false&$orderby=DateEdited ${currentDateOrder}&$top=${defaultLimit}`
 
 		// Reset stage
 		resetFilterPosition()
