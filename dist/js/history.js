@@ -86,17 +86,17 @@ function getStoredQuery(top, skip) {
 	}
 
 	// Get date order
-	query += `&$orderby=DateEdited ${filterDateOrder}`
+	query += `&$orderby=DateEdited ${filterDateOrder}&$filter=isArchived eq false`
 
 	// Filter out running Specifications
 	if (!runningSpecVisibility) {
-		query += "&$filter=StateType ne 'Running' and 'IsArchived' eq false"
+		query += " and stateType ne 'Running'"
 	}
 
 	// Get name filter
 	const filterName = localStorage.getItem(storageKeyName)
 	if (filterName) {
-		query += `and contains(tolower(name), tolower('${filterName}'))`
+		query += ` and contains(tolower(name), tolower('${filterName}'))`
 		nameFilterInput.value = filterName
 	}
 
@@ -323,7 +323,7 @@ async function filterSpecificationsByName(name) {
 		// Create OData filter (contains name)
 		const query = `$filter=contains(tolower(name), tolower('${escapeStringForOData(
 			name,
-		)}')) and StateType ne 'Running' and 'IsArchived' eq false&$orderby=DateEdited ${currentDateOrder}&$top=${defaultLimit}`
+		)}')) and StateType ne 'Running' and isArchived eq false&$orderby=DateEdited ${currentDateOrder}&$top=${defaultLimit}`
 
 		// Reset stage
 		resetFilterPosition()
