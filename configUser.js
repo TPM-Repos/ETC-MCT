@@ -1,7 +1,7 @@
 const config = {
 	version: "1.3.1",
 	// the full path the site running the DriveWorks Live API
-	serverUrl: "https://dw22.api.tpmautomation.com",
+	serverUrl: "http://22.dwapi.etcconnect.com",
 	// serverUrl: "",
 	// The default alias for the DriveWorks Group
 	// This is a custom string that must match the name in the ConfigUser.xml file
